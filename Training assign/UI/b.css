@@ -40,6 +40,9 @@ img.card-img-top:hover {
     padding: 30px;
     cursor: pointer;
 }
+.col {
+    width: 161px;
+}
 .card-title {
     
     font-family: fantasy;
@@ -49,6 +52,9 @@ img.card-img-top:hover {
 img.card-img {
     height: 203px;
     width: 144px;
+}
+img.card-img-top2 {
+    width: 220px;
 }
 a:hover {
     color: #2196f3;
@@ -151,7 +157,7 @@ img.card-img-top1 {
     box-shadow: 6px 20px 17px 3px;
 }
 img.card-img-top2 {
-    width: 348px;
+    width:220px;
 }
 .col1 {
     margin-left: 79px;
