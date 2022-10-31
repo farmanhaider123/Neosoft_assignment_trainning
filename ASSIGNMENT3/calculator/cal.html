@@ -34,19 +34,22 @@
    <div class="cell"><button type="button" onclick="number('%');">%</button></div>
    <div class="cell"><button type="button" onclick="number('0');">0</button></div>
    <div class="cell"><button type="button" onclick="result('=');">=</button></div>
-   <div class="cell"><button type="button" onclick="number('.');">.
+   <div class="cell"><button type="button" onclick="number('.'); ">.
   </button></div>
 </div>
 
 </div>
 <div class="history" id="history">
 <h1>History</h1>
-<input type="textarea" id="num1">
+<div id="num1">
+  </div>
 
 <div class="cell1 close"><button1 type="button" onclick="closePopup();"><i class="fa fa-close" style="font-size:24px"></i></button1></div>
 </div>   
   </div>
   <script>
+        let evaluatedData='';
+        let abc =[];
         function number(num) {
           var val= document.getElementById("num");
          val.value += num
@@ -55,9 +58,23 @@
         } 
         function result(num) {
           var result= document.getElementById("num");
-         var res=result.value = eval(result.value);
+        var temp = result.value;
+        var res=result.value = eval(result.value);
+          evaluatedData = temp+ "="+ res;
+          abc.push(evaluatedData);
+          evaluatedData ='';
+
          var val2=document.getElementById("num1")
-          val2.value+=num+res
+          abc.forEach(val => {
+          let div =  document.createElement('div') 
+          let para = document.createElement('p');
+          para.innerHTML = val;
+          let breaks = document.createElement('br');
+          para.appendChild(breaks);
+          div.appendChild(para);
+          val2.appendChild(div);
+          })
+          abc =[];
       
         } 
         function CLEAR() {
